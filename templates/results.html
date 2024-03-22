@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Similar Image Search Results</title>
+</head>
+<body>
+    <h1>Query Image</h1>
+    <img src="{{ url_for('static', filename='/dataset/' + query_image) }}" alt="Query Image" style="width: 400px; height: auto;">
+
+    <h1>Similar Images</h1>
+    {% for img_data in similar_images_data %}
+    <img src="data:image/jpeg;base64,{{ img_data }}" alt="Similar Image" style="width: 400px; height: auto;">
+    {% endfor %}
+</body>
+</html>
